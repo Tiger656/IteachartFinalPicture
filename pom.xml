@@ -13,28 +13,28 @@
   <!-- FIXME change it to the project's website -->
   <url>http://maven.apache.org</url>
 
-  <!--<properties>
+  <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
 
-    &lt;!&ndash; Explicitly declaring the source encoding eliminates the following
-            message: &ndash;&gt;
-    &lt;!&ndash; [WARNING] Using platform encoding (UTF-8 actually) to copy filtered
-        resources, i.e. build is platform dependent! &ndash;&gt;
+    <!-- Explicitly declaring the source encoding eliminates the following
+            message: -->
+    <!-- [WARNING] Using platform encoding (UTF-8 actually) to copy filtered
+        resources, i.e. build is platform dependent! -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    &lt;!&ndash; JBoss dependency versions &ndash;&gt;
-    <version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
+    <!-- JBoss dependency versions -->
+    <!--<version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
 
     &lt;!&ndash; other plugin versions &ndash;&gt;
     <version.surefire.plugin>2.10</version.surefire.plugin>
     &lt;!&ndash;<version.war.plugin>2.1.1</version.war.plugin>&ndash;&gt;
     <version.war.plugin>3.2.2</version.war.plugin>
 
-    <version.mongodb.driver>3.0.3</version.mongodb.driver>
+    <version.mongodb.driver>3.0.3</version.mongodb.driver>-->
 
-  </properties>-->
+  </properties>
 
   <dependencies>
     <dependency>
