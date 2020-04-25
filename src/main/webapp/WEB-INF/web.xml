@@ -9,6 +9,7 @@
   </welcome-file-list>
   <servlet>
     <servlet-name>Controller</servlet-name>
+    <display-name>Controller</display-name>
     <servlet-class>by.itechart.application.Controller</servlet-class>
   </servlet>
   <servlet-mapping>
