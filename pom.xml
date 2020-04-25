@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -11,30 +11,30 @@
 
   <name>untitled Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>http://maven.apache.org</url>
 
-  <properties>
+  <!--<properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
 
-    <!-- Explicitly declaring the source encoding eliminates the following
-            message: -->
-    <!-- [WARNING] Using platform encoding (UTF-8 actually) to copy filtered
-        resources, i.e. build is platform dependent! -->
+    &lt;!&ndash; Explicitly declaring the source encoding eliminates the following
+            message: &ndash;&gt;
+    &lt;!&ndash; [WARNING] Using platform encoding (UTF-8 actually) to copy filtered
+        resources, i.e. build is platform dependent! &ndash;&gt;
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <!-- JBoss dependency versions -->
+    &lt;!&ndash; JBoss dependency versions &ndash;&gt;
     <version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
 
-    <!-- other plugin versions -->
+    &lt;!&ndash; other plugin versions &ndash;&gt;
     <version.surefire.plugin>2.10</version.surefire.plugin>
-    <!--<version.war.plugin>2.1.1</version.war.plugin>-->
+    &lt;!&ndash;<version.war.plugin>2.1.1</version.war.plugin>&ndash;&gt;
     <version.war.plugin>3.2.2</version.war.plugin>
 
     <version.mongodb.driver>3.0.3</version.mongodb.driver>
 
-  </properties>
+  </properties>-->
 
   <dependencies>
     <dependency>
@@ -45,16 +45,16 @@
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.5</version>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
       <scope>provided</scope>
     </dependency>
-    <dependency>
+    <!--<dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>3.1.0</version>
       <scope>provided</scope>
-    </dependency>
+    </dependency>-->
 
     <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
     <dependency>
@@ -70,14 +70,14 @@
   </dependencies>
 
   <build>
-    <finalName>untitled</finalName>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <finalName>ROOT</finalName>
+    <!--<pluginManagement>&lt;!&ndash; lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) &ndash;&gt;
       <plugins>
         <plugin>
           <artifactId>maven-war-plugin</artifactId>
           <version>${version.war.plugin}</version>
           <configuration>
-            <!-- Java EE 6 doesn't require web.xml, Maven needs to catch up! -->
+            &lt;!&ndash; Java EE 6 doesn't require web.xml, Maven needs to catch up! &ndash;&gt;
             <failOnMissingWebXml>false</failOnMissingWebXml>
           </configuration>
         </plugin>
@@ -85,7 +85,7 @@
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
         </plugin>
-        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+        &lt;!&ndash; see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging &ndash;&gt;
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
@@ -94,14 +94,14 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
         </plugin>
-        <!--<plugin>
+        &lt;!&ndash;<plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
-        </plugin>-->
-        <!--<plugin>
+        </plugin>&ndash;&gt;
+        &lt;!&ndash;<plugin>
           <artifactId>maven-war-plugin</artifactId>
           <version>3.2.2</version>
-        </plugin>-->
+        </plugin>&ndash;&gt;
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
           <version>2.5.2</version>
@@ -111,18 +111,18 @@
           <version>2.8.2</version>
         </plugin>
       </plugins>
-    </pluginManagement>
+    </pluginManagement>-->
   </build>
 
-  <profiles>
+  <!--<profiles>
     <profile>
-      <!-- When built in OpenShift the 'openshift' profile will be used when
-          invoking mvn. -->
-      <!-- Use this profile for any OpenShift specific customization your app
-          will need. -->
-      <!-- By default that is to put the resulting archive into the 'deployments'
-          folder. -->
-      <!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
+      &lt;!&ndash; When built in OpenShift the 'openshift' profile will be used when
+          invoking mvn. &ndash;&gt;
+      &lt;!&ndash; Use this profile for any OpenShift specific customization your app
+          will need. &ndash;&gt;
+      &lt;!&ndash; By default that is to put the resulting archive into the 'deployments'
+          folder. &ndash;&gt;
+      &lt;!&ndash; http://maven.apache.org/guides/mini/guide-building-for-different-environments.html &ndash;&gt;
       <id>openshift</id>
       <build>
         <plugins>
@@ -139,5 +139,5 @@
       </build>
     </profile>
 
-  </profiles>
+  </profiles>-->
 </project>
