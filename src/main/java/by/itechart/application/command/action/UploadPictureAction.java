@@ -24,7 +24,11 @@ public class UploadPictureAction implements Command {
             String[] splittedNameForExtension = currentFileName.split("\\.");
             String fileExtension = splittedNameForExtension[splittedNameForExtension.length - 1].toLowerCase();
 
-            fileItem.get(0).write(new File(path + "\\pictures", name + "." + fileExtension));
+            File uploadDir = new File(path + File.separator + "pictures");
+            if (!uploadDir.exists()) {
+                uploadDir.mkdir();
+            }
+            fileItem.get(0).write(new File(uploadDir, name + "." + fileExtension));
         } catch (FileExistsException e) {
             request.getSession().setAttribute("errormessage", "file with this name already exists");
             return CommandResult.redirect("/");

@@ -9,7 +9,7 @@
     <img src="${picture}" />
 </c:forEach>
 
-<form id="form-button" action="/application/controller" method="POST">
+<form id="form-button" action="/untitled/controller" method="POST">
     <input type="hidden" name="command" value="pageUploadPicture" >
     <input type="submit" value="Go to uploading">
 </form>
