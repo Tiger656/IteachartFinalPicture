@@ -9,4 +9,7 @@ EXPOSE 8080
 RUN rm -rf /usr/local/tomcat/webapps/*
 
 COPY ./target/untitled.war /usr/local/tomcat/webapps/untitled.war
+COPY ./target/untitled /usr/local/tomcat/webapps/untitled
 CMD ["catalina.sh", "run"]
+
+

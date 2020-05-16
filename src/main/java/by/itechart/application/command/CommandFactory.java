@@ -1,28 +1,31 @@
 package by.itechart.application.command;
 
-import by.itechart.application.command.action.UploadPictureAction;
-import by.itechart.application.command.page.UploadPicture;
-import by.itechart.application.command.page.UploadedPictures;
+import by.itechart.application.command.action.ActionUploadPicture;
+import by.itechart.application.command.page.PageUploadPicture;
+import by.itechart.application.command.page.PageUploadedPictures;
+import by.itechart.application.constant.ConstCommand;
+import by.itechart.application.exception.ExceptionUnknownCommand;
+
 
 public class CommandFactory {
     public CommandFactory(){
 
     }
 
-    public Command getCommand(String command) /*throws UnknownCommandException*/ {
+    public Command getCommand(String command) throws ExceptionUnknownCommand  {
         switch(command) {
-            case("pageUploadPicture"): {
-                return new UploadPicture();
+            case(ConstCommand.PAGE_UPLOAD_PICTURE): {
+                return new PageUploadPicture();
             }
-            case("actionUploadPicture"): {
-                return new UploadPictureAction();
+            case(ConstCommand.ACTION_UPLOAD_PICTURE): {
+                return new ActionUploadPicture();
             }
 
-            case("pageUploadedPictures"): {
-                return new UploadedPictures();
+            case(ConstCommand.PAGE_UPLOADED_PICTURES): {
+                return new PageUploadedPictures();
             }
-            default: return null;
-                //hrow new UnknownCommandException("Unknown command: " + action);
+            default:
+                throw new ExceptionUnknownCommand("Unknown command: " + command);
         }
     }
 }

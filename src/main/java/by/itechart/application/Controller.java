@@ -3,6 +3,7 @@ package by.itechart.application;
 import by.itechart.application.command.Command;
 import by.itechart.application.command.CommandFactory;
 import by.itechart.application.command.CommandResult;
+import by.itechart.application.constant.ConstPage;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -45,6 +46,7 @@ public class Controller extends HttpServlet {
         CommandFactory commandFactory = new CommandFactory();
         DiskFileItemFactory factory = new DiskFileItemFactory();
         ServletFileUpload upload = new ServletFileUpload(factory);
+        System.out.println(getServletContext().getRealPath(""));
         try {
             boolean isMultipart = ServletFileUpload.isMultipartContent(request);
             if (isMultipart) {
@@ -61,8 +63,8 @@ public class Controller extends HttpServlet {
             }
 
         } catch (Exception e) {
-            request.setAttribute("cause", e.getCause());
-            dispatch(request, response, CommandResult.forward("index.jsp"));
+            request.setAttribute("cause", e.getMessage());
+            dispatch(request, response, CommandResult.forward(ConstPage.ERROR.getPage()));
         }
         dispatch(request, response, commandResult);
     }

@@ -2,6 +2,7 @@ package by.itechart.application.command.page;
 
 import by.itechart.application.command.Command;
 import by.itechart.application.command.CommandResult;
+import by.itechart.application.constant.ConstPage;
 import org.apache.commons.fileupload.FileItem;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +16,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class UploadedPictures implements Command {
+public class PageUploadedPictures implements Command {
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response, Map<String, List<FileItem>> parsedRequest, String path) {
@@ -30,6 +31,6 @@ public class UploadedPictures implements Command {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return CommandResult.forward("uploadedpictures.jsp");
+        return CommandResult.forward(ConstPage.UPLOADED_PICTURES.getPage());
     }
 }

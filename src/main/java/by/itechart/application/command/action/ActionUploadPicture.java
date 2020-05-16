@@ -1,6 +1,7 @@
 package by.itechart.application.command.action;
 import by.itechart.application.command.Command;
 import by.itechart.application.command.CommandResult;
+import by.itechart.application.exception.ExceptionFileAlreadyExists;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.io.FileExistsException;
 
@@ -10,9 +11,9 @@ import java.io.File;
 import java.util.List;
 import java.util.Map;
 
-public class UploadPictureAction implements Command {
+public class ActionUploadPicture implements Command {
     @Override
-    public CommandResult execute(HttpServletRequest request, HttpServletResponse response, Map<String, List<FileItem>> parsedRequest, String path) {
+    public CommandResult execute(HttpServletRequest request, HttpServletResponse response, Map<String, List<FileItem>> parsedRequest, String path) throws ExceptionFileAlreadyExists{
         try {
 
             List<FileItem> fileItem = (List<FileItem>) parsedRequest.get("file");
@@ -30,8 +31,7 @@ public class UploadPictureAction implements Command {
             }
             fileItem.get(0).write(new File(uploadDir, name + "." + fileExtension));
         } catch (FileExistsException e) {
-            request.getSession().setAttribute("errormessage", "file with this name already exists");
-            return CommandResult.redirect("/");
+            throw new ExceptionFileAlreadyExists("file with this name already exists");
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,5 +1,6 @@
 package by.itechart.application.command;
 
+import by.itechart.application.exception.ExceptionFileAlreadyExists;
 import org.apache.commons.fileupload.FileItem;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,5 +10,5 @@ import java.util.Map;
 
 public interface Command {
 
-    CommandResult execute(HttpServletRequest request, HttpServletResponse response, Map<String, List<FileItem>> parsedRequest, String path) /* throws ServiceException*/;
+    CommandResult execute(HttpServletRequest request, HttpServletResponse response, Map<String, List<FileItem>> parsedRequest, String path) throws ExceptionFileAlreadyExists;
 }

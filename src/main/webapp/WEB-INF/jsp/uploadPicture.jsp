@@ -5,7 +5,7 @@
 <html>
 <body>
 <h2>Task 2. Application</h2>
-<form id="reg-form" enctype="multipart/form-data" action="/untitled/controller" method="POST">
+<form id="reg-form" enctype="multipart/form-data" action="/controller" method="POST">
     <p>Enter file name</p>
     <input type="text" name="fileName">
     <p>    </p>
@@ -17,7 +17,7 @@
         <p style="color: red; align: center; min-width: 150px">${errormessage}</p>
     </c:if>
 </form>
-<form id="form-button" action="/untitled/controller" method="POST">
+<form id="form-button" action="/controller" method="POST">
     <input type="hidden" name="command" value="pageUploadedPictures" >
     <input type="submit" value="Go to uploaded pictures ">
 </form>
